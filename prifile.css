@@ -1,0 +1,25 @@
+*{
+    text-align: center;
+}
+
+html{
+    background-color: #a3a1d4;
+    font-size: 16px;
+}
+
+body{
+    width: 640px;
+    margin: auto; /* 너비에서 남는 여백을 동일하게 분배= 가운데 정렬 효과*/
+}
+
+h1{
+    font-size: 48px;
+}
+img{
+    width:250;
+    border-radius:10px;
+}
+
+p{
+    font-size: 1.3rem;
+}

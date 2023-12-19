@@ -3,12 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>홈페이지 화면 클론해보기</title>
+  <title>Google 홈페이지 클론</title>
   <style>
-    
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #3e3e3e;
+    }
+
+    #google-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px;
+      background-color: #3e3e3e;
+      z-index: 1000;
+      color: white;
+    }
+
+    #google-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 85vh;
+    }
+
+    #google-logo {
+      width: 250px;
+      height: 90px;
+      margin-bottom: 20px;
+    }
+
+    #search-container {
+      display: flex;
+      align-items: center;
+    }
+
+    #search-box {
+      display: flex;
+      border: 1px solid #dfe1e5;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    #search-input {
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      width: 400px;
+    }
+
+    #google-footer {
+      margin-top: auto;
+      padding: 20px;
+      background-color: #3e3e3e;
+      text-align: center;
+      color: white;
+    }
   </style>
 </head>
 <body>
-
+  <header id="google-header">
+    <div>google정보 스토어</div>
+    <div>Google Gmail 이미지</div>
+  </header>
+  <div id="google-container">
+    <img id="google-logo" 
+    src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png" 
+    alt="Google Logo">
+    <div id="search-container">
+      <div id="search-box">
+        <input type="text" id="search-input" placeholder="🔎 Google 검색 또는 URL 입력">
+      </div>
+    </div>
+  </div>
+  <footer id="google-footer">
+    <div style="text-align: left;">대한민국</div>
+  </footer>
 </body>
 </html>

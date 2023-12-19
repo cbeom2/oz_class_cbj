@@ -4,12 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="oztest10chat.css" rel="stylesheet">
+  <link href="../5회차/text.css" rel="stylesheet">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=sNanum+Gothic&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
   <title>미니채팅방</title>
   <style>
-    
+    .chat-screen{
+      overflow: scroll;
+    }
   </style>
 </head>
 <body>
@@ -25,13 +29,32 @@
             <p class="user_count">2</p>
           </div>
         </div>
+        <ul class="chat-screen_texts">
+          <li class="text">친구야 반가워</li>
+          <li class="text">우리 언제 밥이나 한번 먹자</li>
+          <li class="text">친구야 반가워</li>
+          <li class="text">우리 언제 밥이나 한번 먹자</li>
+          <li class="text">친구야 반가워</li>
+          <li class="text">우리 언제 밥이나 한번 먹자</li>
+          <li class="text">친구야 반가워</li>
+          <li class="text1">싫어</li>
+          <li class="text">우리 언제 밥이나 한번 먹자</li>
+          <li class="text">친구야 반가워</li>
+          <li class="text">우리 언제 밥이나 한번 먹자</li>
+          <li class="text">친구야 반가워</li>
+          <li class="text">우리 언제 밥이나 한번 먹자</li>
+          <li class="text">친구야 반가워</li>
+          <li class="text">우리 언제 밥이나 한번 먹자</li>
+          <li class="text1">싫어</li>
+          
+        </ul>
       </section>
     </main>
 
     <form class="chat-form">
       <section class="chat-form_field">
         <textarea class="chat-form_msg"></textarea>
-        <input type="submit" value="전송" class="chat-form_bt"
+        <input type="submit" value="전송" class="chat-form_bt">
       </section>
     </form>
   </div>

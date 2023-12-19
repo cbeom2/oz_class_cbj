@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응형웹만들기</title>
+  <style>
+    body{
+      background-color: purple;
+    }
+    @media screen and (min-width: 600px){
+      body{
+        background-color: blue;}
+      .text::after{content:'파';}
+      }
+    
+    @media screen and (min-width: 800px){
+      body{
+        background-color: green;
+      }
+      .text::after{content:'초';}
+    }
+    @media screen and (min-width: 1000px){
+      body{
+        background-color: yellow;
+      }
+      .text::after{content:'노';}
+    }
+    @media screen and (min-width: 1200px){
+      body{
+        background-color: orange;
+      }
+      .text::after{content:'주';}
+    }
+    @media screen and (min-width: 1400px){
+      body{
+        background-color: red;
+      }
+      .text::after{content:'빨';}
+    }
+    .div{
+      color: white; 
+      text-align: center; 
+      position:relative;
+      top: 300px;
+    }
+    .text{
+      color: white; 
+      text-align: center; 
+      position:relative;
+      top: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="div">여러 화면 크기로 구경해봐요!</div>
+  <p class="text">무지개</p>
+
+</body>
+</html>

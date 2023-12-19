@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script
+      src="https://kit.fontawesome.com/8531f82b64.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+        * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    background-color: black;
+    width: 100%;
+    height: 40px;
+  }
+  
+  .button {
+    display: inline-block;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .button:nth-child(1) {
+    width: 30px;
+    height: 40px;
+    background-color: green;
+  }
+  
+  .text {
+    font-size: 0.8rem;
+    text-align: center;
+    color: white;
+  }
+  
+  .hamburger {
+    display: none;
+    position: relative;
+    color: white;
+    width: 100%;
+    text-align: center;
+    top: 10px;
+    cursor: pointer;
+  }
+  
+  .list-container {
+    display: none;
+    list-style: none;
+    width: 100%;
+    background-color: black;
+    margin-top: 10px;
+  }
+  
+  .hamburger:hover .list-container {
+    display: block;
+  }
+  
+  .list {
+    position: relative;
+    height: 30px;
+    margin: 0 0 10px 0;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+  }
+  
+  .list:nth-child(1) {
+    background-color: green;
+  }
+  
+  @media (max-width: 550px) {
+    .button {
+      display: none;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  }
+    </style>
+  <title>햄버거만들기</title>
+</head>
+<body>
+  <header class="container">
+    <div class="button">
+      <p class="text">홈</p>
+    </div>
+    <div class="button">
+      <p class="text">소개</p>
+    </div>
+    <div class="button">
+      <p class="text">서비스</p>
+    </div>
+    <div class="button">
+      <p class="text">문의</p>
+    </div>
+    <div class="hamburger">
+      <i class="fa-solid fa-bars"></i>
+      <div class="list-container">
+        <p class="list">홈</p>
+        <p class="list">소개</p>
+        <p class="list">서비스</p>
+        <p class="list">문의</p>
+      </div>
+    </div>
+    <main>
+    </main>
+  </header>
+</body>
+</html>

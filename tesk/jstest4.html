@@ -2,85 +2,46 @@
 <html lang="ko">
 
 <head>
-    <title>회원가입 페이지</title>
+    <title>이미지 페이지 전환</title>
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+        }
 
-    <link href="oztest.5.css" rel="stylesheet" />
-
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="title"><h1 style="font-size: 21px;">회원가입</h1></div>
-        <div class="email">
-            <input id="email" type="text" placeholder="이메일을 입력하세요.">
-            <div id="emailError" class="error"></div>
-        </div>
-        <div class="name">
-            <input id="name"  type="text" placeholder="이름을 입력하세요.">
-            <div id="nameError" class="error"></div>
-        </div>
-        <div class="password">
-            <input id="password" type="password" placeholder="비밀번호를 입력하세요.">
-            <div id="passwordError" class="error"></div>
-        </div>
-        <div class="passwordCheck">
-            <input id="passwordCheck" type="password" placeholder="비밀번호를 다시 입력하세요.">
-            <div id="passwordCheckError" class="error"></div>
-        </div>
-        <div class="phone">
-            <input id="phone1" type="text" size="1" maxlength="3" 
-            placeholder= 010 input="changePhone1()"> -
-            <input id="phone2" type="text" size="3" maxlength="4" 
-            placeholder= 1234 input="changePhone2()"> -
-            <input id="phone3" type="text" size="3" maxlength="4" 
-            placeholder= 5678 input="changePhone3()">
+        <div class="image-container">
+            <img id="image" src="/images/cloud.jpg" alt="이미지 1">
 
         </div>
-        <div class="auth">
-            <div id="certificationNumber">000000</div>
-            <button type="button" id="check">인증번호 전송</button>
-        </div>
-
-        <div class="timer">
-            <div id="timeLimit">03:00</div>
-            <button type="button" id="checking">인증확인</button>
-        </div>
-        <div class="area">
-            <select id="area">
-                <option selected disabled>지역을 선택하세요.</option>
-                <option>서울</option>
-                <option>인천</option>
-                <option>경기</option>
-                <option>전라도</option>
-                <option>대전</option>
-            </select>
-            <div id="areaError" class="error"></div>
-        </div>
-        <div class="gender">
-            <input id="gender_man" type="radio" name="gender">남성  
-            <input id="gender_woman" type="radio" name="gender">여성
-            <div id="genderError" class="error"></div>
-        </div>
-        <div class="line">
-        </div>
-        <div class="signUp">
-            <button id="signUpButton" type="button">가입하기</button>
-        </div>
+        <button id="nextButton" type="button">다음 이미지</button>
     </div>
+
     <script>
-            document.getElementById('signUpButton')
-            .addEventListener('click', function() {
-            const userData = {
-                email: document.getElementById('email').value,
-                name: document.getElementById('name').value,
-                password: document.getElementById('password').value,
-                passwordCheck: document.getElementById('passwordCheck').value,
-                phone1: document.getElementById('phone1').value,
-                phone2: document.getElementById('phone2').value,
-                phone3: document.getElementById('phone3').value,
-            };
-            console.log(userData);
-             });
+        // 이미지 배열
+        const images = ["/images/cloud.jpg", "/images/neti.jpg", "/images/sumer.jpg"];
+        let currentIndex = 0;
+
+        // 이미지 전환 함수
+        function changeImage() {
+            document.getElementById('image').src = images[currentIndex];
+        }
+
+        // 다음 이미지 버튼에 클릭 이벤트 추가
+        document.getElementById('nextButton').addEventListener('click', function () {
+            currentIndex = (currentIndex + 1) % images.length;
+            changeImage();
+        });
     </script>
 </body>
 

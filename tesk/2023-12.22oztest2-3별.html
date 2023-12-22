@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //별 1
+// for(let i = 0; i <= 5; i++)  {
+//   for(let j = 0; j < i; j++)  {
+//     document.write('*');
+//   }
+//   document.write('<br>');
+//} 
+    //별 2
+// for(let i = 0; i <= 5; i++)  {
+//   for(let j = 0; j < i; j++)  {
+//     document.write('*');
+//   }
+//   document.write('<br>');    *
+// }for(let i = 0; i <= 5; i++)  {
+//   for(let j = 5; j > i; j--)  {
+//     document.write('*');
+//   }
+//   document.write('<br>');
+// }
+// 별 3
+for(let i = 0; i < 5; i++){
+    for(let k = 4; k > i; k--){
+        document.write('&nbsp');
+    }for(let j = 0; j < i; j++){
+        document.write('*')
+    }for(let j = 1; j < i; j++){
+        document.write('*')
+    }
+    document.write('<br>');
+}
+for(let i = 0; i < 5; i++){
+    for(let k = 0; k < i ; k++){
+        document.write('&nbsp');
+    }for(let k = 4; k > i; k--){
+         document.write('*')
+    }for(let j = 3; j > i; j--){
+         document.write('*')
+    }
+    document.write('<br>');
+}
+
+    </script>
+</body>
+</html>

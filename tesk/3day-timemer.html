@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머</title>
+    <style>
+    </style>
+</head>
+<body>
+    <h2></h2>
+  <div id="timer"></div>
+    <script>
+        function updateTimer() {
+            const future = Date.parse("2023/12/31 23:59:59");
+            const now = new Date();
+            const diff = future - now;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const mins = Math.floor(diff / (1000 * 60));
+            const secs = Math.floor(diff / 1000);
+
+            const d = days;
+            const h = hours - days * 24;
+            const m = mins - hours * 60;
+            const s = secs - mins * 60;
+
+            document.getElementById("timer")
+                .innerHTML =
+                '<div>'+ '<span>현재 날짜와 시간 :&nbsp;</span>'+ now + '<br>' 
+                + '<span>올해의 남은 시간 :&nbsp;</span>'+ d + '<span>일&nbsp;</span>' +
+                + h + '<span>시간&nbsp;</span>' +
+                + m + '<span>분&nbsp;</span>' +
+                + s + '<span>초&nbsp;</span>'+'<span>남았습니다</span>'+'</div>';
+        }
+
+
+        setInterval(updateTimer, 1000);
+
+    </script>
+</body>
+</html>

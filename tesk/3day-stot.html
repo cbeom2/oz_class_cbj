@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스톱워치</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            <span id="tmin">00</span>
+            <span>:</span>
+            <span id="tsec">00</span>
+            <span>.</span>
+            <span id="tmilisec">00</span>
+        </div>
+        <div>
+            <ul id="testlist"></ul>
+        </div>
+        <div>
+            <button type="button" id="go">start</button>
+            <button type="button" id="stop">stop
+
+            </button>
+        </div>
+    </div>
+    <script>
+        let sttime = 0
+        let endtime = 0
+        let timerstart
+
+        let min
+        let sec
+        let milisec
+
+        let goBtn = document.getElementById("go")
+        let stopBtn = document.getElementById("stop")
+        let testlist = document.getElementById('testlist')
+
+        goBtn.addEventListener("click", function(){
+            if(this.innerText == 'RECORD' && milisec){
+                console.log(min, sec, milisec)
+                let li = document.createElement('li')
+                li.style.color = "#fff"
+                li.innerText = min + ' : ' + sec + ':' + milisec
+                if(! testlist.firstChild){
+                    testlist.append(li)
+                }else{
+                    testlist.insertBefore(li, recordList.firstChild)
+                }
+                return false
+            }
+        })
+        this.innerText = 'RECORD'
+
+        if(!stTime){
+            stTime = Date.now()
+        }else{
+            stopBtn.innerText= 'STOP'
+            stTime += (Date.now() - endTime)
+        }
+
+        timerstart = setInterval(function(){
+            let nowTime = new Date(Date.now() - stTime)
+
+            min = addZero(nowTime.getMinutes())
+            sec = addZero(nowTime.getSeconds())
+            milisec = addZero(Math.floor(nowTime.getMilliseconds() /10))
+
+            document.getElementById('testmin').innerText = min
+            document.getElementById('testsec').innerText = sec
+            document.getElementById('testmilisec').innerText = milisec
+        }, 1)
+
+        stopBtn.addEventListener("click",function(){
+            if(timerstart){
+                clearInterval(timerstart)
+                if(this.innerText == 'STOP'){
+                    endTime=Date.now()
+                    this.innerText = 'RESET'
+                    goBtn.innerText = 'RESTART'
+                }else{
+                    stTime = 0
+                    min = 0
+                    sec = 0
+                    milisec = 0
+                    document.getElementById('testmin').innerText = '00'
+                    document.getElementById('testsec').innerText = '00'
+                    document.getElementById('testmilisec').innerText = '00'
+                    goBtn.innerText = 'START'
+                    this.innerText = 'STOP'
+                    timerstart = null
+                    recordList.innerHTML =''
+                }
+            }
+        })
+
+        function addZero(num){
+            return (num < 10 ? '0'+num : ''+num)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가위바위보 게임</title>
+    <style>
+      *{box-sizing: border-box;}
+
+      #button{
+        position: fixed;
+        bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button type="button" id="button" onclick="toggleImageChange()">멈춰</button>
+    <script>
+
+       const images = ["cloud.jpg","my.jpg","neti.jpg","sumer.JPG"];
+
+       function changeBackground() {
+            const chosenImage = images[Math.floor(Math.random() * images.length)];
+            const bgImage = `url(../images/${chosenImage})`;
+            document.body.style.backgroundImage = bgImage;
+            document.body.style.backgroundSize = "cover";
+        }
+        // 초기 호출
+        changeBackground();
+        // 2초마다 이미지 변경
+        setInterval(changeBackground, 1000);
+        
+        function toggleImageChange() {
+        if (intervalId) {
+          // 이미지 변경 멈춤
+          clearInterval(intervalId);
+          intervalId = null;
+          document.getElementById("button").innerText = "재생";
+        } else {
+          // 이미지 변경 재개
+          intervalId = setInterval(changeBackground, intervalTime);
+          document.getElementById("button").innerText = "멈춰";
+        }
+      }
+
+      </script>
+  </body>
+</html>

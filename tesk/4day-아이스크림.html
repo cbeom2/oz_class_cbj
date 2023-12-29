@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가위바위보 게임</title>
+  </head>
+  <body>
+      <div id="container">
+        <div>
+          <input type="button" id="add" value="아이스크림 추가">
+          <input type="button" id="add1" value="아이스크림 출력">
+          <input type="button" id="add2" value="아이스크림 목록">
+        </div>
+        <p>입력한 아이스크림 목록 :</p>
+        <div id="ice">
+          
+        </div>
+      </div>
+    <script>
+      const add = document.getElementById("add")
+      const add1 = document.getElementById("add1")
+      const add2 = document.getElementById("add2")
+      const ice = document.getElementById("ice")
+
+      let icebox = []
+      
+      add.addEventListener("click", function(){
+        let icepi = prompt('추가하고싶은 아이스크림을 입력하세요')
+        icebox.push(icepi)
+      })
+
+      add1.addEventListener("click", function(){
+        icebox.forEach(function(item){
+          alert(item)
+        })
+      })
+
+      add2.addEventListener("click", function(){
+        ice.textContent = icebox
+      })
+
+    </script>
+  </body>
+</html>

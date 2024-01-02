@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>떡잎 유치원 멀리뛰기 결과</title>
+    <style>
+      body {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+    <h1>떡잎 유치원 멀리뛰기 결과</h1>
+    
+    <table border="1">
+      <tr>
+        <th>이름</th>
+        <th>점수</th>
+      </tr>
+      <tbody id="resultsTableBody"></tbody>
+    </table>
+    <p id="passedStudents"></p>
+
+    <script>
+      function displayResults(names, scores) {
+        const students = names.map((name, index) => ({
+          name: name,
+          score: scores[index],
+        }));
+
+        const tableBody = document.getElementById("resultsTableBody");
+
+        students.forEach((student) => {
+          const row = document.createElement("tr");
+          const nameCell = document.createElement("td");
+          const scoreCell = document.createElement("td");
+
+          nameCell.textContent = student.name;
+          scoreCell.textContent = student.score;
+
+          row.appendChild(nameCell);
+          row.appendChild(scoreCell);
+          tableBody.appendChild(row);
+        });
+
+        const passedStudents = students.filter(
+          (student) => student.score >= 75
+        );
+        const passedStudentNames = passedStudents
+          .map((student) => student.name)
+          .join(", ");
+
+        const passedStudentsText = document.getElementById("passedStudents");
+        passedStudentsText.textContent = `75점 이상: ${passedStudentNames}`;
+      }
+
+      const names = [" 짱 구 ", "맹 구", "철 수", "훈 이", "유 리", "수 지"];
+      const scores = [45, 75, 95, 50, 68, 86];
+
+      displayResults(names, scores);
+    
+    </script>
+  </body>
+</html>
